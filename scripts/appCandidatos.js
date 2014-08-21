@@ -1,6 +1,6 @@
 var app = angular.module('candidatos', []);
 
-var token = "tVKugWcoOJLt";
+var token = "0KlR7rdI7pH4";
 var urlApi = "http://api.transparencia.org.br/api/v1/";
 
 
