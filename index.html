@@ -43,15 +43,18 @@
         .cargo {
             margin: 1em;
         }
+
         #NomeCandidato {
             display: inline-block;
-            width:70%;
+            width: 70%;
         }
-        @media(max-width:767px) /*xs*/{
+
+        @media(max-width:767px) /*xs*/ {
             #NomeCandidato {
-                display:block;
+                display: block;
                 width: 100%;
             }
+
             .btn-block-xs {
                 width: 100%;
             }
@@ -141,10 +144,114 @@
 
         </div>
 
-        <!--<div id="divMapa" class="hidden-xs">-->
-        <div id="divMapa">
 
+        <div id="listaEstados" class="visible-xs row">
 
+            <p class="col-xs-12">Selecione o Estado</p>
+           
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary" ng-click="estadoClick('ac');">AC</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('al');">AL</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('ap');">AO</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('am');">AM</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('ba');">BA</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('ce');">CE</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('df');">DF</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('es');">ES</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('go');">GO</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('ma');">MA</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('mt');">MT</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('ms');">MS</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('mg');">MG</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('pa');">PA</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('pb');">PB</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('pr');">PR</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('pe');">PE</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('pi');">PI</button>
+            </div>
+
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('rj');">RJ</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('rn');">RN</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('rs');">RS</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('ro');">RO</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('rr');">RR</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('sc');">SC</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('sp');">SP</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('se');">SE</button>
+            </div>
+            <div class="cargo col-xs-3">
+                <button class="btn btn-primary " ng-click="estadoClick('to');">TO</button>
+            </div>
+
+        </div>
+
+        <div id="divMapa" class="hidden-xs">
             <!--<svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1500 460" xml:space="preserve">-->
             <svg version="1.1" id="svg-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="630px" viewBox="0 0 450 460" enable-background="new 0 0 450 460" xml:space="preserve">
             <g>
