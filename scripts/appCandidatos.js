@@ -8,11 +8,11 @@ var urlApi = "http://api.transparencia.org.br/" + environment + "/v1/";
 function CandidatosController($scope, $http, $location) {
 
 
-    $scope.pesquisarCandidatos = function () {        
+    $scope.pesquisarCandidatos = function () {
         $scope.app.carregando = true;
-                
+
         var estado = $scope.app.estadoSelecionado;
-        
+
         if (estado == "")
             estado = "sp";
 
@@ -25,17 +25,17 @@ function CandidatosController($scope, $http, $location) {
         	});
     }
 
-  
+
 
     var listarCandidatos = function () {
-        
+
         $scope.app.carregando = true;
 
         var idcargo = $scope.app.cargoSelecionado;
         var estado = $scope.app.estadoSelecionado;
-        
-        if ($scope.app.estadoSelecionado === "df" &&  $scope.app.cargoSelecionado  == 7)
-           idcargo = 8;
+
+        if ($scope.app.estadoSelecionado === "df" && $scope.app.cargoSelecionado == 7)
+            idcargo = 8;
 
         $http.get(urlApi + "candidatos?estado=" + estado + "&cargo=" + idcargo + "&_offset=0&_limit=15",
         	{ headers: { 'App-token': token } }).success(function (data) {
@@ -43,21 +43,21 @@ function CandidatosController($scope, $http, $location) {
         	    $scope.cargo = "Candidatos a " + data[0].cargo + " - " + data[0].estado;
         	    $scope.itens = data;
         	    $scope.app.carregando = false;
-              });
+        	});
     }
 
 
     $scope.app = {
         estadoSelecionado: "",
         cargoSelecionado: "",
-        carregando : false
+        carregando: false
     };
 
     $scope.cargoClick = function (cargo) {
-      
+
         $scope.app.cargoSelecionado = cargo;
 
-       
+
         if (cargo == 1)
             $scope.app.estadoSelecionado = "br";
 
@@ -65,9 +65,9 @@ function CandidatosController($scope, $http, $location) {
     };
 
     $scope.estadoClick = function (estado) {
-     
+
         $scope.app.estadoSelecionado = estado;
-    
+
         if ($scope.app.cargoSelecionado != 1)
             verificaPrenchimento();
     };
@@ -77,16 +77,15 @@ function CandidatosController($scope, $http, $location) {
         if (!$scope.app.cargoSelecionado || !$scope.app.estadoSelecionado)
             return false;
 
-        if ($scope.app.cargoSelecionado != 1 && $scope.app.estadoSelecionado == "br")
-        {
+        if ($scope.app.cargoSelecionado != 1 && $scope.app.estadoSelecionado == "br") {
             alert("Selecione um Estado");
             return false;
         }
-        
+
 
         //TODO: implementar msg de erro
 
-            listarCandidatos();
+        listarCandidatos();
     }
 
 }

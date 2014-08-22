@@ -4,63 +4,10 @@
     <meta charset="UTF-8">
     <title>Candidatos</title>
     <style>
-        #svg-map path {
-            fill: #0094d9;
-        }
 
-        #svg-map text {
-            fill: #fff;
-            font: 12px Arial-BoldMT, sans-serif;
-            cursor: pointer;
-        }
-
-        #svg-map a {
-            text-decoration: none;
-        }
-
-            #svg-map a:hover {
-                cursor: pointer;
-                text-decoration: none;
-            }
-
-                #svg-map a:hover path {
-                    fill: #003399 !important;
-                }
-
-        #svg-map .circle {
-            fill: #66ccff;
-        }
-
-        #svg-map a:hover .circle {
-            fill: #003399 !important;
-            cursor: pointer;
-        }
-
-        .imgcandidato {
-            width: 140px;
-        }
-
-        .cargo {
-            margin: 1em;
-        }
-
-        #NomeCandidato {
-            display: inline-block;
-            width: 70%;
-        }
-
-        @media(max-width:767px) /*xs*/ {
-            #NomeCandidato {
-                display: block;
-                width: 100%;
-            }
-
-            .btn-block-xs {
-                width: 100%;
-            }
-        }
     </style>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/site.css">
     <script src="http://code.angularjs.org/1.0.8/angular.min.js"></script>
 
     <script src="scripts/appCandidatos.js?v=1"></script>
@@ -115,7 +62,7 @@
         </div>
 
 
-        <div class="form form-horizontal" style="width: 30em;">
+        <div class="form form-horizontal" id="formPesquisaCandidato">
             <div class="form-group">
                 <label for="NomeCandidato">Pesquisar Candidato</label>
                 <input type="text" id="NomeCandidato" class="form-control" placeholder="Nome do Candidato" ng-model="app.nome" />
@@ -148,7 +95,7 @@
         <div id="listaEstados" class="visible-xs row">
 
             <p class="col-xs-12">Selecione o Estado</p>
-           
+
             <div class="cargo col-xs-3">
                 <button class="btn btn-primary" ng-click="estadoClick('ac');">AC</button>
             </div>
