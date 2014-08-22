@@ -1,14 +1,14 @@
 var app = angular.module('candidatos', []);
 
 var token = "0KlR7rdI7pH4";
-var urlApi = "http://api.transparencia.org.br/api/v1/";
+var environment = "sandbox"; //sandbox or api
+var urlApi = "http://api.transparencia.org.br/" + environment + "/v1/";
 
 
 function CandidatosController($scope, $http, $location) {
 
 
-    $scope.pesquisarCandidatos = function () {
-        debugger;
+    $scope.pesquisarCandidatos = function () {        
         $scope.app.carregando = true;
                 
         var estado = $scope.app.estadoSelecionado;
@@ -37,7 +37,7 @@ function CandidatosController($scope, $http, $location) {
         if ($scope.app.estadoSelecionado === "df" &&  $scope.app.cargoSelecionado  == 7)
            idcargo = 8;
 
-        $http.get(urlApi + "candidatos?estado=" + estado + "&cargo=" + idcargo + "&_offset=0&_limit=150",
+        $http.get(urlApi + "candidatos?estado=" + estado + "&cargo=" + idcargo + "&_offset=0&_limit=15",
         	{ headers: { 'App-token': token } }).success(function (data) {
 
         	    $scope.cargo = "Candidatos a " + data[0].cargo + " - " + data[0].estado;
